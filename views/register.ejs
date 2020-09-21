@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container-v2">
+        <% if (errors != null && errors.length > 0) { %>
+            <ul>
+                <% for (var i = 0; i < errors.length; i++) { %> 
+                <li class="error-appeared"><%= errors[i] %> </li>
+                <% } %> 
+            </ul>
+        <% } %>  
+    </div>
+    <div class="container">
+            <form class="form" action="/auth/register" method="POST">
+                <h3>Register form</h3>
+            <input type="text" placeholder="Email" name="email" value="<%if(user != null){ %><%=user.email%><%}else{%><%}%>">
+                <br>
+                <input type="text" placeholder="FirstName" name="firstname" value="<%if(user != null){ %><%=user.firstname%><%}else{%><%}%>">
+                <br>
+                <input type="text" placeholder="SecondName" name="secondname" value="<%if(user != null){ %><%=user.secondname%><%}else{%><%}%>">
+                <br>
+                <input type="text" placeholder="TelNum" name="telnum" value="<%if(user != null){ %><%=user.telnum%><%}else{%><%}%>">
+                <br>
+                <input type="password" placeholder="Password" name="password">
+                <br>
+                <button >Rgister</button>
+            </form>
+    </div>
+</body>
+</html>

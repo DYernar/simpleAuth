@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css">
+    <title>Main Page</title>
+</head>
+<body>
+    <div class="container">
+        <% if (!loggedIn) { %> 
+        <a href="/auth/login"><div>Login</div></a>
+        <a href="/auth/register"><div>Register</div></a>
+        <% } %>
+
+        <% if (loggedIn) { %> 
+            <a href="/profile"><div>Profile</div></a>
+            <a href="/auth/logout"><div>Logout</div></a>
+        <% } %>
+
+    </div>
+</body>
+</html>
